@@ -38,9 +38,9 @@
 - add event listeners to those elements
 - do the thing
 
-# Pseudocode Iteration-1
+<!-- # Pseudocode Iteration-1
 
-## Make your Own Cover Button
+## Make your Own Cover Button -->
 
 <!-- - Create eventListeners for button -->
 
@@ -50,7 +50,7 @@
 
 <!-- - Form view visible - Home button visible -->
 
-## Saved covers button
+<!-- ## Saved covers button -->
 
 <!-- - View Saved Covers button - show saved cover section & home page hidden
 
@@ -84,5 +84,7 @@
 # Refactor after Iteration-2
 
 1. making the toggle add/remove to be more dry?
-=> on view saved covers need to see save cover button 
-=> on make your own cover view need to see view saved covers 
+   => on view saved covers need to see save cover button
+   => on make your own cover view need to see view saved covers
+
+# Pseudocode Iteration-3
