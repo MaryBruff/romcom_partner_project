@@ -31,11 +31,13 @@ var currentCover;
 // Add your event listeners here 👇
 window.addEventListener('load', displayRandomCover);
 randomCoverButton.addEventListener('click', displayRandomCover);
-viewSavedCoversButton.addEventListener('click', showSavedCoversView); //
-makeNewCoverButton.addEventListener('click', showFormView); //
-homeButton.addEventListener('click', showHomeView); //
+viewSavedCoversButton.addEventListener('click', showSavedCoversView); 
+makeNewCoverButton.addEventListener('click', showFormView); 
+homeButton.addEventListener('click', showHomeView); 
 makeMyCoverButton.addEventListener('click', makeMyBookBtn);
-saveCoverButton.addEventListener('click', saveCover); //
+saveCoverButton.addEventListener('click', saveCover); 
+savedCoversView.addEventListener('dblclick', deleteCover)
+
 
 // Create your event handlers and other functions here 👇
 
@@ -81,7 +83,7 @@ function showSavedCoversView() {
   savedView.classList.remove('hidden');
   formView.classList.add('hidden');
   randomCoverButton.classList.add('hidden');
-  saveCoverButton.classList.remove('hidden');
+  saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
   viewSavedCoversButton.classList.add('hidden');
 }
@@ -104,10 +106,6 @@ function makeMyBookBtn(event) {
   var title = document.querySelector('.user-title').value;
   var descriptor1 = document.querySelector('.user-desc1').value;
   var descriptor2 = document.querySelector('.user-desc2').value;
-
-  //Use the newly created object to display the newly created cover
-  // var coverImage = document.querySelector('.cover-image');
-  // var coverTitle = document.querySelector('.cover-title');
 
   //Create new cover
   var currentCover = createCover(cover, title, descriptor1, descriptor2);
@@ -140,12 +138,6 @@ function displayNewCover(cover) {
   tagline2.innerText = cover.tagline2;
 }
 
-//on the view saved cover button the form/view needs to be hidden
-
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
-}
-
 function saveCover() {
   // Check if currentCover is null or undefined
   if (!savedCovers.includes(currentCover)) {
@@ -163,23 +155,37 @@ function displaySavedCovers() {
     for (var i = 0; i < savedCovers.length; i++) {
       var cover = savedCovers[i];
       savedCoversView.innerHTML += `
-        <div class="mini-cover" style="background-image: url(${cover.coverImg});">
-          <h2 class="cover-title">${cover.title}</h2>
-          <h3 class="tagline">A tale of <span class="tagline-1">${cover.tagline1}</span> and <span class="tagline-2">${cover.tagline2}</span></h3>
-          <img class="cover-image" src="${cover.coverImg}" alt="No image found">
-        </div>
+      <div class="mini-cover" style="background-image: url(${cover.coverImg});">
+      <h2 class="cover-title">${cover.title}</h2>
+      <h3 class="tagline">A tale of <span class="tagline-1">${cover.tagline1}</span> and <span class="tagline-2">${cover.tagline2}</span></h3>
+      <img class="cover-image" src="${cover.coverImg}" alt="No image found">
+      </div>
       `;
     }
   }
 }
 
-function createCover(imgSrc, title, descriptor1, descriptor2) {
-  var cover = {
-    id: Date.now(),
-    coverImg: imgSrc,
-    title: title,
-    tagline1: descriptor1,
-    tagline2: descriptor2,
-  };
-  return cover;
+function deleteCover(event) {
+  var clickedCoverElement = event.target.closest('.mini-cover');
+  if (clickedCoverElement) {
+    var coverIndex = Array.from(savedCoversView.children).indexOf(clickedCoverElement);
+    if (coverIndex !== -1) {
+      savedCovers.splice(coverIndex, 1);
+      displaySavedCovers();
+    }
+  }
 }
+            
+      function getRandomIndex(array) {
+        return Math.floor(Math.random() * array.length);
+      }
+      function createCover(imgSrc, title, descriptor1, descriptor2) {
+        var cover = {
+          id: Date.now(),
+          coverImg: imgSrc,
+          title: title,
+          tagline1: descriptor1,
+          tagline2: descriptor2,
+        };
+        return cover;
+      }
