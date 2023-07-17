@@ -10,29 +10,38 @@ Get ready for a delightful and whimsical adventure into the world of romance nov
 4. Run open index.html to open the site via the default browser.
 
 ### Preview of App:
-[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+
+ [Live View of Site](https://marybruff.github.io/romcom_partner_project/)
 
 ### Context:
 We had five days to complete this project. It was assigned during the second week of module 1 at the Turing School of Software and Design. It took us 55 person-hours of work to complete through iteration 3. Our goal was to work collaboratively to write Javascript to allow the user to show a random romance cover, save a cover, view those saved covers, and create their own. 
 
 
 ### Contributors:
-https://github.com/AHochworter
-https://github.com/MaryBruff
+- [Ann Hochworter](https://github.com/AHochworter)
+- [Mary Bruff](https://github.com/MaryBruff)
 
 ### Learning Goals:
-Tech used: Github, Terminal, VS Code, Dev Tools, Javascript, CSS, and HTML.
-Learning goals:
--Connection between HTML, CSS, and Javascript 
--Work collaboratively to write clean, DRY Javascript
--Communicate, troubleshoot, and plan effectively as a team
--Work toward having both team members contribute throughout the duration of the project
+  
+  * Connection between HTML, CSS, and Javascript 
+  
+  * Work collaboratively to write clean, DRY Javascript
+  
+  * Communicate, troubleshoot, and plan effectively as a team
+  
+  * Work toward having both team members contribute throughout the duration of the project
+
+  Tech used: Github, Terminal, VS Code, Dev Tools, Javascript, CSS, and HTML.
+
 
 ### Wins + Challenges:
 Wins:
-We worked well as a cohesive unit
-Troubleshooting and using problem-solving skills to get through Iteration 2 
-Find and troubleshoot the minor bugs we caused when we refactored our code after iteration 2 
+
+* We worked well as a cohesive unit
+* Troubleshooting and using problem-solving skills to get through Iteration 2 
+* Find and troubleshoot the minor bugs we caused when we refactored our code after iteration 2 
+
 Challenges:
-Iteration 2 was our biggest challenge. 
-Ironing out our workflow in the first handful of hours, but with time we really started to click and sync as a team
+
+* Iteration 2 was our biggest challenge. 
+* Ironing out our workflow in the first handful of hours, but with time we really started to click and sync as a team
